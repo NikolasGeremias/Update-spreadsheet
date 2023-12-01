@@ -111,6 +111,11 @@ result = service.spreadsheets().values().get(spreadsheetId=spreadsheet_id,
                                              ).execute()
 
 # Data handling
+for i, row in enumerate(exportacao['FROTA']):
+    row = str(row)
+    row = row.replace('TT', '')
+    exportacao.loc[i, 'FROTA'] = row
+
 t_exportacao = exportacao.transpose()
 atendimentos = result['values']
 delta = 0
