@@ -64,6 +64,15 @@ for attempt in range(max_attempts):
         driver.find_element(By.ID, 'ui-multiselect-8-selectStatusAtendimento-option-7').click()
         driver.find_element(By.ID, 'selectStatusAtendimento_ms').click()
 
+        # Exclude Schulz
+        driver.find_element(By.ID, 'selectEquipesAtd_ms').click()
+        driver.find_element(By.ID, 'ui-multiselect-6-selectEquipesAtd-option-25').click()
+        driver.find_element(By.ID, 'selectEquipesAtd_ms').click()
+
+        driver.find_element(By.ID, 'selectEquipes_ms').click()
+        driver.find_element(By.ID, 'ui-multiselect-5-selectEquipes-option-25').click()
+        driver.find_element(By.ID, 'selectEquipes_ms').click()
+
         # Data Conclusão
         input_date = config_selenium.date_range
         driver.find_element(By.ID, 'conclusaoInicial').send_keys(input_date)
